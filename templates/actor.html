@@ -1,0 +1,50 @@
+{% block content %}
+<div>
+    <button type="button" id = "Home button" onclick="window.location.href='/'">Return Home</button>
+    <br>
+    {% for a_actor in actors %}
+    <button id = "{{a_actor}}" onclick="buttonFunction(id)">{{ a_actor.actor_full_name }}</button>
+    <div id = "{{a_actor}}_id" style="display: none;"> 
+        {% for movie in movie_file %}
+            {% if a_actor in movie.actors %}
+        <div> 
+            <button id = "{{a_actor}}{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
+            <div id ="{{a_actor}}{{movie.title}}_id" style="display: none;">
+                <h3>
+                    {{ movie.title }}
+                </h3>
+                Director: {{movie.director.director_full_name}} 
+                <br>
+                Genres: 
+                {% for genre_thing in movie.genres %}
+                    {{genre_thing.genre_name}},
+                {% endfor %}
+                <br>
+                Actors:
+                {% for actor in movie.actors %}
+                    {{actor.actor_full_name}},
+                {% endfor %}
+                <br>
+                {{movie.description}}
+                <br>
+            </div>
+        </div>
+            {% endif %}
+        {% endfor %}
+    <br>
+    </div>
+    {% endfor %}
+    </div>
+    <script>
+        function buttonFunction(button_id) {
+          var movie_div = document.getElementById(button_id+"_id");
+          if (movie_div.style.display === "none") {
+            movie_div.style.display = "block";
+          } else {
+            movie_div.style.display = "none";
+          }
+        }
+    </script>
+
+</div>
+{% endblock %}
