@@ -1,10 +1,16 @@
-{% block content %}
-<div>
-    <button type="button" id = "Home button" onclick="window.location.href='/'">Return Home</button>
+{% extends 'layout.html' %} {% block content %}
+<div id ="browse">
+    <br>
+    <div id="browse-title">
+        <h2> Here you can just browse Movies</h2>
+        <h3>Mabye you might find something interesting?</h3>
+    </div>
+    <br>
     {% for movie in movie_file %}
     <div> 
   <button id = "{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
         <div id ="{{movie.title}}_id" style="display: none;">
+            <div class="movie-info"> 
             <h3>
                 {{ movie.title }}
             </h3>
@@ -22,6 +28,7 @@
             <br>
             {{movie.description}}
             <br>
+        </div>
         </div>
     </div>
         {% endfor %}

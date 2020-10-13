@@ -1,6 +1,6 @@
 """app entry point"""
 from flask import Flask, Blueprint, render_template
-from model import Actor, Director, Movie, Genre
+from model import Actor, Director, Movie, Genre, Review, User
 from movie_file_csv_reader import MovieFileCSVReader
  
 app = Flask(__name__)

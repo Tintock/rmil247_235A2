@@ -1,8 +1,9 @@
-{% block content %}
+{% extends 'layout.html' %} {% block content %}
 <div>
-<button type="button" id = "Home button" onclick="window.location.href='/'">Return Home</button>
+
 <br>
 {% for a_director in directors %}
+<ul class="pagination"> 
 <button id = "{{a_director}}" onclick="buttonFunction(id)">{{ a_director.director_full_name }}</button>
 <div id = "{{a_director}}_id" style="display: none;"> 
     {% for movie in movie_file %}
@@ -11,6 +12,7 @@
         <button id = "{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
 
         <div id ="{{movie.title}}_id" style="display: none;">
+            <div class="movie-info"> 
             <h3>
                 {{ movie.title }}
             </h3>
@@ -29,11 +31,14 @@
             {{movie.description}}
             <br>
         </div>
+        </div>
     </div>
         {% endif %}
     {% endfor %}
 </div>
 {% endfor %}
+
+</ul>
         <br>
         <script>
             function buttonFunction(button_id) {

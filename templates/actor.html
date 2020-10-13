@@ -1,6 +1,6 @@
-{% block content %}
+{% extends 'layout.html' %} {% block content %}
 <div>
-    <button type="button" id = "Home button" onclick="window.location.href='/'">Return Home</button>
+    
     <br>
     {% for a_actor in actors %}
     <button id = "{{a_actor}}" onclick="buttonFunction(id)">{{ a_actor.actor_full_name }}</button>
@@ -10,6 +10,7 @@
         <div> 
             <button id = "{{a_actor}}{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
             <div id ="{{a_actor}}{{movie.title}}_id" style="display: none;">
+                <div class="movie-info"> 
                 <h3>
                     {{ movie.title }}
                 </h3>
@@ -27,6 +28,7 @@
                 <br>
                 {{movie.description}}
                 <br>
+                </div>
             </div>
         </div>
             {% endif %}

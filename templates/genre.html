@@ -1,6 +1,6 @@
-{% block content %}
+{% extends 'layout.html' %} {% block content %}
 <div>
-<button type="button" id = "Home button" onclick="window.location.href='/'">Return Home</button>
+
 <br>
 {% for a_genre in genres %}
 <button id = "{{a_genre}}" onclick="buttonFunction(id)">{{ a_genre.genre_name }}</button>
@@ -10,6 +10,7 @@
     <div> 
         <button id = "{{a_genre}}{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
         <div id ="{{a_genre}}{{movie.title}}_id" style="display: none;">
+            <div class="movie-info"> 
             <h3>
                 {{ movie.title }}
             </h3>
@@ -27,6 +28,7 @@
             <br>
             {{movie.description}}
             <br>
+        </div>
         </div>
     </div>
         {% endif %}
