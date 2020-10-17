@@ -7,8 +7,8 @@
     </div>
     <br>
     {% for movie in movie_file %}
-    <div> 
-  <button id = "{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
+    <div class = "movie-list"> 
+  <button id = "{{movie.title}}" class = "movie-button" onclick="buttonFunction(id)">{{ movie.title }}</button>
         <div id ="{{movie.title}}_id" style="display: none;">
             <div class="movie-info"> 
             <h3>

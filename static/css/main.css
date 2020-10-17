@@ -1,0 +1,74 @@
+/* main.css */
+
+body,html {
+  background-color: lightblue;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+}
+
+title {
+  text-align: center;
+  margin: auto;
+  width: 88%;
+  border: 2px;
+  border-color:blue ;
+}
+
+
+
+.movie-list{
+  margin: 0%;
+
+}
+
+
+.movie-button{
+  border: none;
+  background-color: inherit;
+  color: darkblue;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+
+}
+.movie-button:hover{
+  background: skyblue ;
+}
+
+.movie-button:active{
+  color: darkblue;
+  background-color: lightskyblue;
+}
+
+
+.movie-info {
+  border: darkblue;
+  border: 1px solid;
+  color: darkblue;
+  background-color: lightskyblue;
+  box-shadow: 1px 1px white;
+  padding: 5px 5px;
+}
+
+.home-buttons-group .home-buttons-group{
+  border: darkblue;
+}
+
+.home-buttons-group .button {
+  background-color: lightskyblue; 
+  border: blue;
+  border: 1px solid;
+  color: darkblue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.home-buttons-group .button:hover {
+  background-color:#eeee;
+}
