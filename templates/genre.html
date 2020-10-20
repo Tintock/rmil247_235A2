@@ -1,14 +1,14 @@
 {% extends 'layout.html' %} {% block content %}
-<div>
+<div class = "movie-list">
 
 <br>
 {% for a_genre in genres %}
-<button id = "{{a_genre}}" onclick="buttonFunction(id)">{{ a_genre.genre_name }}</button>
+<button id = "{{a_genre}}" onclick="buttonFunction(id)" class="other_buttons">{{ a_genre.genre_name }}</button>
 <div id = "{{a_genre}}_id" style="display: none;"> 
     {% for movie in movie_file %}
         {% if a_genre in movie.genres %}
-    <div> 
-        <button id = "{{a_genre}}{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
+    <div class = "movie-list"> 
+        <button id = "{{a_genre}}{{movie.title}}" class="movie-button" onclick="buttonFunction(id)">{{ movie.title }}</button>
         <div id ="{{a_genre}}{{movie.title}}_id" style="display: none;">
             <div class="movie-info"> 
             <h3>

@@ -1,15 +1,14 @@
 {% extends 'layout.html' %} {% block content %}
-<div>
+<div class = "movie-list">
 
 <br>
 {% for a_director in directors %}
-<ul class="pagination"> 
-<button id = "{{a_director}}" onclick="buttonFunction(id)">{{ a_director.director_full_name }}</button>
+<button id = "{{a_director}}" onclick="buttonFunction(id)" class="other_buttons">{{ a_director.director_full_name }}</button>
 <div id = "{{a_director}}_id" style="display: none;"> 
     {% for movie in movie_file %}
         {% if a_director == movie.director %}
-    <div> 
-        <button id = "{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
+    <div class = "movie-list"> 
+        <button id = "{{movie.title}}" class="movie-button" onclick="buttonFunction(id)">{{ movie.title }}</button>
 
         <div id ="{{movie.title}}_id" style="display: none;">
             <div class="movie-info"> 
@@ -37,8 +36,6 @@
     {% endfor %}
 </div>
 {% endfor %}
-
-</ul>
         <br>
         <script>
             function buttonFunction(button_id) {

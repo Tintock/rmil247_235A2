@@ -3,12 +3,12 @@
     
     <br>
     {% for a_actor in actors %}
-    <button id = "{{a_actor}}" onclick="buttonFunction(id)">{{ a_actor.actor_full_name }}</button>
+    <button id = "{{a_actor}}" onclick="buttonFunction(id)" class="other_buttons">{{ a_actor.actor_full_name }}</button>
     <div id = "{{a_actor}}_id" style="display: none;"> 
         {% for movie in movie_file %}
             {% if a_actor in movie.actors %}
-        <div> 
-            <button id = "{{a_actor}}{{movie.title}}" onclick="buttonFunction(id)">{{ movie.title }}</button>
+        <div class = "movie-list"> 
+            <button id = "{{a_actor}}{{movie.title}}" class = "movie-button" onclick="buttonFunction(id)">{{ movie.title }}</button>
             <div id ="{{a_actor}}{{movie.title}}_id" style="display: none;">
                 <div class="movie-info"> 
                 <h3>
