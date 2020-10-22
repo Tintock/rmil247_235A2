@@ -1,18 +1,11 @@
 """app entry point"""
 from flask import Flask, Blueprint, render_template
 from model import Actor, Director, Movie, Genre, Review, User
-from movie_file_csv_reader import MovieFileCSVReader
+from memory_repo import abstract
  
 app = Flask(__name__)
 
-filename = 'Data1000Movies.csv'
-movie_file_reader = MovieFileCSVReader(filename)
-movie_file_reader.read_csv_file()
-data_file = movie_file_reader.dataset_of_movies
-genre_file = movie_file_reader.dataset_of_genres
-director_file = movie_file_reader.dataset_of_directors
-actor_file = movie_file_reader.dataset_of_actors
-
+data_file,genre_file, director_file,actor_file, = abstract()
 
 home_blueprint = Blueprint(
     'home_bp', __name__)
@@ -73,7 +66,19 @@ def actor():
         actors = actor_file
     )
 
+search_blueprint = Blueprint(
+    'search_bp', __name__)
 
+@app.route("/search")
+@search_blueprint.route('search', methods=['GET', 'POST'])
+def search():
+    return render_template(
+        'search.html',
+        movie_file = data_file,
+        actors = actor_file,
+        directors = director_file,
+        genres = genre_file
+    )
 
 if __name__ == "__main__":
     app.run()

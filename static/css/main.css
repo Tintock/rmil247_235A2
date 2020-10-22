@@ -15,9 +15,32 @@ title {
   border-color:blue ;
 }
 
+.side_left {
+  height: 100%; 
+  width: 15%; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color:orange; 
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+.side_right {
+  height: 100%; 
+  width: 15%;
+  position: fixed; 
+  z-index: 1;
+  top: 0;
+  left: 85%;
+  background-color:orange; 
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
 
 .movie-list{
+  text-align: left;
   margin: 0%;
 
 }
@@ -34,12 +57,12 @@ title {
 
 }
 .movie-button:hover{
-  background: skyblue ;
+  background: orange ;
 }
 
 .movie-button:active{
-  color: darkblue;
-  background-color: lightskyblue;
+  color: orange;
+  background-color: orange;
 }
 
 
@@ -70,5 +93,37 @@ title {
 }
 
 .home-buttons-group .button:hover {
-  background-color:#eeee;
+  background-color:orange;
+}
+
+.other_buttons{
+  background-color: orange; 
+  border: blue;
+  border: 2px solid;
+  color: darkblue;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.other_buttons:hover{
+  background-color: lightskyblue;
+}
+
+.pagination-page-info {
+  padding: .6em;
+  padding-left: 0;
+  width: 40em;
+  margin: .5em;
+  margin-left: 0;
+  font-size: 12px;
+}
+.pagination-page-info b {
+  color: black;
+  background: #6aa6ed;
+  padding-left: 2px;
+  padding: .1em .25em;
+  font-size: 150%;
 }
